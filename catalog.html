@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин товаров</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper {
+        display: flex;
+        min-height: 100vh;
+    }
+    .sidebar {
+        background-color: #343a40;
+        color: white;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar-content {
+        flex: 1;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+    .sidebar a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+    }
+    .sidebar a:hover {
+        background-color: #495057;
+    }
+    .user-section {
+        border-top: 1px solid #495057;
+        padding: 15px 20px;
+        background-color: #2c3034;
+    }
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 80%;
+        background-color: #474747;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    .dropdown-menu {
+        background-color: #495057;
+        border: none;
+    }
+    .dropdown-item {
+        color: white;
+    }
+    .dropdown-item:hover {
+        background-color: #5a6268;
+        color: white;
+    }
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px 0;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Стили для thumbnail блоков */
+    .thumbnail-card {
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0.5rem;
+    }
+    .thumbnail-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .thumbnail-img {
+        height: 200px;
+        background-color: #474747;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    .thumbnail-body {
+        padding: 1.5rem;
+    }
+    .thumbnail-text {
+        color: #6c757d;
+        margin-bottom: 1rem;
+    }
+    .thumbnail-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btn-outline-secondary {
+        border-color: #474747;
+        color: #474747;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #474747;
+        color: white;
+    }
+    .text-muted {
+        font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- Боковое меню -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <h4 class="text-center mb-4">Меню</h4>
+      <a href="#">Главная</a>
+      <a href="#">Товары</a>
+      <a href="#">Категории</a>
+      <a href="#">Контакты</a>
+    </div>
+
+    <!-- Блок пользователя -->
+    <div class="user-section">
+      <div class="user-info">
+        <div class="user-avatar">Фото</div>
+        <div>
+          <div class="fw-bold">Иван Иванов</div>
+          <div class="small text-muted">Пользователь</div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-outline-light btn-sm w-100 dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Управление профилем
+        </button>
+        <ul class="dropdown-menu w-100">
+          <li><a class="dropdown-item" href="#">Профиль</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#">Выйти</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основной контент -->
+  <div class="main-content">
+    <!-- Заголовок -->
+    <div class="header">
+      <h1 class="display-4">Каталог</h1>
+    </div>
+
+    <!-- Thumbnail блоки - Первый ряд -->
+    <div class="row mb-4">
+      <!-- Thumbnail 1 -->
+      <div class="col-md-6">
+        <div class="thumbnail-card">
+          <div class="thumbnail-img">Эскиз</div>
+          <div class="thumbnail-body">
+            <p class="thumbnail-text">
+              Это более широкая карточка с сопроводительным текстом ниже, который служит
+              естественным переходом к дополнительному контенту.
+            </p>
+            <div class="thumbnail-actions">
+              <div>
+                <button class="btn btn-outline-secondary btn-sm">Смотреть</button>
+                <button class="btn btn-outline-secondary btn-sm">Править</button>
+              </div>
+              <span class="text-muted">9 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail 2 -->
+      <div class="col-md-6">
+        <div class="thumbnail-card">
+          <div class="thumbnail-img">Эскиз</div>
+          <div class="thumbnail-body">
+            <p class="thumbnail-text">
+              Это более широкая карточка с сопроводительным текстом ниже, который служит
+              естественным переходом к дополнительному контенту.
+            </p>
+            <div class="thumbnail-actions">
+              <div>
+                <button class="btn btn-outline-secondary btn-sm">Смотреть</button>
+                <button class="btn btn-outline-secondary btn-sm">Править</button>
+              </div>
+              <span class="text-muted">12 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thumbnail блоки - Второй ряд -->
+    <div class="row">
+      <!-- Thumbnail 3 -->
+      <div class="col-md-6">
+        <div class="thumbnail-card">
+          <div class="thumbnail-img">Эскиз</div>
+          <div class="thumbnail-body">
+            <p class="thumbnail-text">
+              Это более широкая карточка с сопроводительным текстом ниже, который служит
+              естественным переходом к дополнительному контенту.
+            </p>
+            <div class="thumbnail-actions">
+              <div>
+                <button class="btn btn-outline-secondary btn-sm">Смотреть</button>
+                <button class="btn btn-outline-secondary btn-sm">Править</button>
+              </div>
+              <span class="text-muted">15 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail 4 -->
+      <div class="col-md-6">
+        <div class="thumbnail-card">
+          <div class="thumbnail-img">Эскиз</div>
+          <div class="thumbnail-body">
+            <p class="thumbnail-text">
+              Это более широкая карточка с сопроводительным текстом ниже, который служит
+              естественным переходом к дополнительному контенту.
+            </p>
+            <div class="thumbnail-actions">
+              <div>
+                <button class="btn btn-outline-secondary btn-sm">Смотреть</button>
+                <button class="btn btn-outline-secondary btn-sm">Править</button>
+              </div>
+              <span class="text-muted">7 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
