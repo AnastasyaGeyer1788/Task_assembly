@@ -1,3 +1,4 @@
+# Учебный проект - Домашняя работа
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 host_name = "localhost"
